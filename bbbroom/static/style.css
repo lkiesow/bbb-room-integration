@@ -1,0 +1,48 @@
+body {
+	margin: 0;
+	background-color: #222;
+	color: white;
+	font-family: sans;
+	text-align: center;
+}
+
+div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+img {
+	position: absolute;
+	width: 150px;
+	top: 0;
+	left: 50px;
+}
+
+a {
+	display: inline-block;
+	color: white;
+	background-color: #333;
+	text-decoration: none;
+	padding: 50px 75px;
+	margin: 40px;
+	border: 1px solid red;
+	border-radius: 25px;
+}
+
+a:hover {
+	background-color: #555;
+}
+
+.feather {
+	display: block;
+	width: 200px;
+	height: 200px;
+	margin-bottom: 20px;
+	stroke: white;
+	stroke-width: 1;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	fill: none;
+}
