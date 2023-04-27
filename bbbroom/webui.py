@@ -9,7 +9,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('start.html')
+
+@app.route('/join')
+def join():
+    return render_template('join.html')
 
 
 @app.route('/whiteboard')
