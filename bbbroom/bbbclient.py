@@ -4,7 +4,7 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.by import By
 
 
-GREENLIGHT_URL = 'https://bbb.elan-ev.de/b/lar-tmq-aiy-y8u'
+GREENLIGHT_URL = 'https://webconf-next.uni-osnabrueck.de/b/tim-0sr-kmb-cho'
 WEBUI_URL = 'http://127.0.0.1:5000'
 
 options = webdriver.FirefoxOptions()
@@ -24,8 +24,7 @@ def wait_for(element, timeout=20):
 def find_css(selector):
     return driver.find_element(By.CSS_SELECTOR, selector)
 
-
-def whiteboard():
+def join_room():
     driver.get(GREENLIGHT_URL)
     driver.fullscreen_window()
 
@@ -44,15 +43,12 @@ def whiteboard():
                                'button[data-test="closeModal"]')
     elem.click()
 
-    # Hide side bar
-    wait_for((By.CSS_SELECTOR, 'button[data-test="toggleUserList"]'))
-    find_css('button[data-test="toggleUserList"]').click()
+    # Hide public chat
+    wait_for((By.CSS_SELECTOR, 'div[data-test="chatButton"]'))
+    find_css('div[data-test="chatButton"]').click()
 
-    driver.execute_script('''
-        document.getElementsByTagName('header')[0].style.display = 'none';
-        document.getElementsByTagName('section')[0].style.display = 'none';
-    ''')
 
+def whiteboard():
     wait_for((By.CSS_SELECTOR, 'button[data-test="whiteboardOptionsButton"]'))
     find_css('button[data-test="whiteboardOptionsButton"]').click()
 

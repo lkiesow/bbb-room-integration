@@ -16,9 +16,9 @@ def join():
     return render_template('join.html')
 
 
-@app.route('/whiteboard')
+@app.route('/join_meeting')
 def repofile():
-    bbbroom.bbbclient.whiteboard()
+    bbbroom.bbbclient.join_room()
     return ''
 
 
